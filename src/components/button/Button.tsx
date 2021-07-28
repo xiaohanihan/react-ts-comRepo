@@ -24,12 +24,12 @@ interface ButtonProps {
 
 const Button: React.FC<ButtonProps> = (prop: ButtonProps) => {
   const { type, size, children,href } = prop
-  const classs = classNames('btn')
+  const className = classNames('btn')
 
   if (type === ButtonTypes.link && href) {
     return <a href={href}>{children}</a>
   } else {
-    return <div>{children}</div>
+    return <div className={className}>{children}</div>
   }
 }
 

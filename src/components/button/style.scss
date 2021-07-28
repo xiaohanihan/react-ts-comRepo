@@ -1,5 +1,9 @@
 .btn {
-  .primary {
-    background-color: $primary;
-  }
+  display: inline-block;
+  background-color: #fff;
+  border: 1px solid black;
+  width: auto;
+  cursor: pointer;
+  box-shadow: violet;
+  @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-border-radius);
 }
