@@ -1,0 +1,1 @@
+type comTypes = 'default' | 'primary' | 'danger' | 'warning' | 'link' | undefined;

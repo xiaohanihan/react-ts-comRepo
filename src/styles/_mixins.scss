@@ -3,3 +3,8 @@
   font-size: $fontSize;
   border-radius: $borderRadius;
 }
+
+@mixin button-style($backColor, $color) {
+  background-color: $backColor;
+  color: $color;
+}
