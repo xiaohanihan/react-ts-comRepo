@@ -1,0 +1,20 @@
+.vikingInputOutWrapper {
+    .vikingInputInWrapper {
+        padding: $btn-padding-y $btn-padding-x;
+        font-family: $font-family-base;
+        font-size: $font-size-base;
+        font-weight: $font-weight-base;
+        line-height: $line-height-base;
+        color: $input-color;
+        background-color: $input-bg;
+        // background-clip: padding-box;
+        border: 1px solid $input-border-color;
+        border-radius: $border-radius;
+        box-shadow: $box-shadow-inset;
+        &:focus {
+            color: $gray-700;
+            border-color: lighten($primary, 0.25);
+            outline: 0;
+        }
+    }
+}

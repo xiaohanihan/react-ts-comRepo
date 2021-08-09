@@ -1,6 +1,6 @@
 import * as React from 'react'
 import './App.scss'
-import { Button, Alert, Menu, MenuItem, SubMenu, Icon } from './components'
+import { Button, Alert, Menu, MenuItem, SubMenu, Icon, Input } from './components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 import { CSSTransition } from 'react-transition-group'
@@ -40,6 +40,7 @@ function App() {
       >
         <div>111</div>
       </CSSTransition>
+      <Input />
     </div>
   )
 }
