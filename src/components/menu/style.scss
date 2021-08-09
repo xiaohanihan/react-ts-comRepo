@@ -1,0 +1,128 @@
+.viking-header {
+  display      : flex;
+  list-style   : none;
+  margin-bottom: 30px;
+  border-bottom: 1px solid black;
+  box-shadow   : 3px 3px 3px 3px #888888;
+
+  .vikingMenuItem {
+    padding: 10px 10px;
+    cursor : pointer;
+
+    &.isActive {
+      color        : blue;
+      border-bottom: 1px solid blue;
+    }
+
+    &:hover {
+      border-bottom: 1px solid blue;
+    }
+
+    &.isDisabled {
+      color        : gray;
+      cursor       : default;
+      border-bottom: none;
+    }
+  }
+
+  &.menu-vertical {
+    flex-direction: column;
+
+    .vikingMenuItem {
+      border-bottom: 0;
+      border-left  : 1px solid transparent;
+
+      &.isActive {
+        border-left: 1px solid blue;
+      }
+
+      &:hover {
+        border-left: 1px solid blue;
+      }
+
+      &.isDisabled {
+        color      : gray;
+        cursor     : default;
+        border-left: none;
+      }
+    }
+  }
+
+  // 子菜单
+  .subMenu{
+    padding: 10px 10px;
+    position: relative;
+    .subMenuTitle{
+      display: flex;
+      align-items: center;
+      .subMenuIcon{
+        transition: transform linear 250ms;
+        margin-left: 3px;
+      }
+      &:hover{
+        .subMenuIcon{
+          transform: rotate(180deg);
+        }
+      }
+    }
+    > ul {
+      list-style: none;
+      padding-inline-start: 0;
+      border: 1px solid #dee2e6;
+      width: 200px;
+      position: absolute;
+      top: calc(100% + 10px);
+      left: 0;
+      transform: translateX(-50%);
+      height: 100px;
+    }
+
+    &.isOpen {
+      > ul {
+        list-style: none;
+      }
+    }
+  }
+
+  &.menu-vertical{
+    .subMenu{
+      .subMenuTitle{
+        &:hover{
+          .subMenuIcon{
+            transform: rotate(0);
+          }
+        }
+      }
+      > ul {
+      }
+      &.isOpen{
+        &:hover{
+          .subMenuIcon{
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+  }
+
+  .showSubMenu-enter{
+    // opacity: 0;
+    transform: scaleY(0) !important;
+  }
+  .showSubMenu-enter-active{
+    // opacity: 1;
+    transform: scaleY(1) !important;
+    transition: transform 1000ms;
+    transform-origin: center top;
+  }
+  .showSubMenu-exit{
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  .showSubMenu-exit-active{
+    opacity: 0;
+    transform: scaleY(0);
+    transition: opacity 1000ms, transform 1000ms;
+    transform-origin: center top;
+  }
+}

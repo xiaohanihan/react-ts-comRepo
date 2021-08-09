@@ -1,11 +1,16 @@
 import * as React from 'react';
+import './style.scss'
+import classnames from 'classnames'
 
 interface AlertProps {
-  type? : comTypes;
+  type?: comTypes;
 }
 
-const Alert:React.FC<AlertProps> = (props) => {
-  const {children} = props;
+export const Alert: React.FC<AlertProps> = ({children,type}) => {
 
-  return <div></div>
+  const className = classnames(['alertContainer', {
+    'success': type === 'success'
+  }])
+
+  return <div className={className}>{children}</div>
 }
